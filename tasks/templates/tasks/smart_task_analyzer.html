@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="/static/tasks/smart_task_analyzer.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1 class="title">Smart Task Analyzer</h1>
+
+    <!-- Input Card -->
+    <div class="card">
+        <label class="label">Enter Tasks (JSON Format)</label>
+        <textarea id="taskInput" class="input-box" placeholder='[
+    {
+        "title": "Fix login bug",
+        "due_date": "2025-11-30",
+        "estimated_hours": 3,
+        "importance": 8,
+        "dependencies": []
+    }
+]'></textarea>
+
+        <label class="label">Select Strategy</label>
+        <select id="strategy" class="select-box">
+            <option value="smart">Smart Balance</option>
+            <option value="fastest">Fastest Wins</option>
+            <option value="impact">High Impact</option>
+            <option value="deadline">Deadline Driven</option>
+        </select>
+
+        <button class="btn" onclick="analyzeTasks()">Analyze Tasks</button>
+    </div>
+
+    <!-- Output Card -->
+    <div class="card">
+        <h2 class="subtitle">Results</h2>
+        <div id="output" class="output-box"></div>
+    </div>
+</div>
+
+<script src="/static/tasks/smart_task_analyzer.js"></script>
+
+</body>
+</html>
